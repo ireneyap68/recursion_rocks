@@ -7,8 +7,14 @@
 # Represent the two outcomes of each flip as "H" or "T"
 
 def coin_flips(n):
-    # Write code here
-    pass
+    if n <= 0:
+        return []
+    if n == 1:
+        return ['H', 'T']
+    combos = coin_flips(n-1)
+    print(n)
+    return [x+'H' for x in combos] + [x+'T' for x in combos]
 
-# print(coinFlips(2)) 
+
+print(coin_flips(2)) 
 # => ["HH", "HT", "TH", "TT"]
